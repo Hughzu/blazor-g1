@@ -1,4 +1,5 @@
 ﻿@inject States.ImportExportState _state
+@inject IJSRuntime _jsRuntime
 @implements IDisposable
 
 @page "/Export"
@@ -14,9 +15,9 @@
     protected override void OnInitialized() => _state.OnStateChange += StateHasChanged;
     public void Dispose() => _state.OnStateChange -= StateHasChanged;
 
-    private void Export()
+    private async void Export()
     {
-        // TODO call service
+        await _jsRuntime.InvokeVoidAsync("alert", "ah que coucou");
     }
 
 }
