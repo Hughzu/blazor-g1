@@ -9,11 +9,14 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="6.0.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ImportExport.Blazor\ImportExport.Blazor.csproj" />
+      <ProjectReference Include="..\ImportExport\ImportExport.Blazor\ImportExport.Blazor.csproj" />
+      <ProjectReference Include="..\ImportExport\ImportExport.Domain\ImportExport.Domain.csproj" />
       <ProjectReference Include="..\Promotions\Promotions.Blazor\Promotions.Blazor.csproj" />
+      <ProjectReference Include="..\Promotions\Promotions.Domain\Promotions.Domain.csproj" />
     </ItemGroup>
 
 </Project>
