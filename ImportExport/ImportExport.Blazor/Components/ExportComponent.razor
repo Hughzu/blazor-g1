@@ -1,12 +1,14 @@
-﻿<input @bind="ClassName" type="text" class="form-control" placeholder="Class to export" aria-label="Class to export" aria-describedby="basic-addon2">
+﻿@inject States.ImportExportState _state
+@implements IDisposable
+
+<input @bind="ClassName" type="text" class="form-control" placeholder="Class to export" aria-label="Class to export" aria-describedby="basic-addon2">
   <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">.cs</span>
   </div>
 <button @onclick="AddClass">Add</button>
-<button @onclick="InvokeUpdate">Update</button>
 
 
-@foreach (var c in Classes)
+@foreach (var c in _state.Classes)
 {
     <li>
         <ul>
@@ -17,26 +19,17 @@
 
 @code {
 
-    [Parameter]
-    public List<string> Classes { get; set; }
-
-    [Parameter]
-    public EventCallback<List<string>> UpdateClasses { get; set; }
-
     private string ClassName { get; set; }
+    
+    protected override void OnInitialized() => _state.OnStateChange += StateHasChanged;
+    public void Dispose() => _state.OnStateChange -= StateHasChanged;
 
     private void AddClass()
     {
         if (ClassName != null)
         {
-            Classes.Add(ClassName);
+            _state.AddClass(ClassName);
             ClassName = null;
         }
     }
-    
-    async Task InvokeUpdate()
-    {
-        await UpdateClasses.InvokeAsync(Classes);
-    }
-
 }
