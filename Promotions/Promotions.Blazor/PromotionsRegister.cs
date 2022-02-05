@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace Promotions;
+namespace Promotions.Blazor;
 
 public static class PromotionsRegister
 {

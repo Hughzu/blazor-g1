@@ -1,4 +1,6 @@
 ﻿@using System.Reflection
+@using ImportExport.Blazor
+@using Promotions.Blazor
 <Router AppAssembly="@typeof(App).Assembly" AdditionalAssemblies="@_externalAssemblies">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
@@ -16,7 +18,7 @@
 {
     private readonly List<Assembly> _externalAssemblies = new()
     {
-        typeof(ImportExport.ImportExportRegister).Assembly,
-        typeof(Promotions.PromotionsRegister).Assembly,
+        typeof(ImportExportRegister).Assembly,
+        typeof(PromotionsRegister).Assembly,
     };
 }

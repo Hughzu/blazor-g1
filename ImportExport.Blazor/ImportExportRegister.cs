@@ -1,7 +1,7 @@
-﻿using ImportExport.Communication;
+﻿using ImportExport.Blazor.Communication;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ImportExport;
+namespace ImportExport.Blazor;
 
 public static class ImportExportRegister
 {

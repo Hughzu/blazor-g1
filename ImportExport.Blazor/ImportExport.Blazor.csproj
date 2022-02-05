@@ -18,6 +18,9 @@
     <ItemGroup>
       <_ContentIncludedByDefault Remove="wwwroot\background.png" />
       <_ContentIncludedByDefault Remove="wwwroot\exampleJsInterop.js" />
+      <_ContentIncludedByDefault Remove="ImportExport.Domain\obj\ImportExport.Domain.csproj.nuget.dgspec.json" />
+      <_ContentIncludedByDefault Remove="ImportExport.Domain\obj\project.assets.json" />
+      <_ContentIncludedByDefault Remove="ImportExport.Domain\obj\project.packagespec.json" />
     </ItemGroup>
 
     <ItemGroup>

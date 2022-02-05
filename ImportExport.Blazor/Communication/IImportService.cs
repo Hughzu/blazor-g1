@@ -1,6 +1,7 @@
-﻿using ImportExport.Domain;
+﻿using System.Collections.Generic;
+using ImportExport.Blazor.Domain;
 
-namespace ImportExport.Communication;
+namespace ImportExport.Blazor.Communication;
 
 public interface IImportService
 {

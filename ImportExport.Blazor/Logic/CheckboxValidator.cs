@@ -1,4 +1,4 @@
-﻿namespace ImportExport.Logic;
+﻿namespace ImportExport.Blazor.Logic;
 
 public class CheckboxValidator
 {

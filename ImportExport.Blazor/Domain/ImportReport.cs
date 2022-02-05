@@ -1,4 +1,4 @@
-﻿namespace ImportExport.Domain;
+﻿namespace ImportExport.Blazor.Domain;
 
 public class ImportReport
 {
