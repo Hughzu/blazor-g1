@@ -1,0 +1,42 @@
+﻿<input @bind="ClassName" type="text" class="form-control" placeholder="Class to export" aria-label="Class to export" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">.cs</span>
+  </div>
+<button @onclick="AddClass">Add</button>
+<button @onclick="InvokeUpdate">Update</button>
+
+
+@foreach (var c in Classes)
+{
+    <li>
+        <ul>
+            @c .cs
+        </ul>
+    </li>
+}
+
+@code {
+
+    [Parameter]
+    public List<string> Classes { get; set; }
+
+    [Parameter]
+    public EventCallback<List<string>> UpdateClasses { get; set; }
+
+    private string ClassName { get; set; }
+
+    private void AddClass()
+    {
+        if (ClassName != null)
+        {
+            Classes.Add(ClassName);
+            ClassName = null;
+        }
+    }
+    
+    async Task InvokeUpdate()
+    {
+        await UpdateClasses.InvokeAsync(Classes);
+    }
+
+}

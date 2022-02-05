@@ -2,8 +2,27 @@
 
 <h3>ExportPage</h3>
 
-<Test />
+<ExportComponent Classes="@Classes" UpdateClasses="OnClassesChanged" />
+
+<p>Number of items : @Classes.Count</p>
+<button @onclick="Export">Export</button>
 
 @code {
-    
+    private List<string> Classes { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Classes = new List<string>();
+    }
+
+    private void OnClassesChanged(List<string> newValue)
+    {
+        Classes = newValue;
+    }
+
+    private async void Export()
+    {
+        // TODO call service
+    }
+
 }
